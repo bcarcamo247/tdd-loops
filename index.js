@@ -11,8 +11,17 @@
  * echo("test", 1); // "test"
  */
 export function echo(word, n) {
-  // TODO
+  if (n <= 0) return "";
+
+  let result = "";
+
+  for (let i = 0; i < n; i++) {
+    result += word;
+  }
+  return result;
 }
+  // TODO
+
 
 /**
  * @param {string} word - The word to repeat.
@@ -27,8 +36,19 @@ export function echo(word, n) {
  * echoWithSpace("test", 1); // "test"
  */
 export function echoWithSpace(word, n) {
-  // TODO
+  let result = "";
+
+  for (let i = 0; i < n; i++) {
+    result += word;
+
+    if (i < n - 1) {
+      result += " ";
+    }
+  }
+  return result;
 }
+  // TODO
+
 
 /**
  * @param {number} n - The number to stop at
@@ -42,6 +62,14 @@ export function echoWithSpace(word, n) {
  * sumTo(100); // 5050
  */
 export function sumTo(n) {
+  if (n <= 0) return 0;
+
+  let sum = 0;
+
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
   // TODO
 }
 
@@ -58,6 +86,14 @@ export function sumTo(n) {
  * sumFromTo(2, 2); // 2
  */
 export function sumFromTo(a, z) {
+  if (a > z) return 0;
+
+  let sum = 0;
+
+  for (let i = a; i <= z; i++) {
+    sum += i;
+  }
+  return sum;
   // TODO
 }
 
@@ -73,7 +109,10 @@ export function sumFromTo(a, z) {
  * countdown(5); // logs 5, 4, 3, 2, 1
  */
 export function countdown(n) {
-  // TODO
+  for (let i = n; i >= 1; i--) {
+    console.log(i);
+  }
+  // TODO 
 }
 
 /**
@@ -88,6 +127,13 @@ export function countdown(n) {
  * sumOddsToN(1); // 1
  */
 export function sumOddsToN(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    if (i % 2 !== 0) {
+      sum += i;
+    }
+  }
+  return sum;
   // TODO
 }
 
@@ -108,6 +154,13 @@ export function sumOddsToN(n) {
  * getGrowthTime(5, 78); // 80
  */
 export function getGrowthTime(start, target) {
+  if (start <= 0) return undefined;
+  let minutes = 0;
+  while (start < target) {
+    start *= 2;
+    minutes += 20;
+  }
+  return minutes;
   // TODO
 }
 
@@ -128,6 +181,13 @@ export function getGrowthTime(start, target) {
  * getCompoundTime(30000, 0.04, 50000); // 14
  */
 export function getCompoundTime(start, rate, target) {
+  if (start <= 0 || rate <= 0) return undefined;
+  let years = 0;
+  while (start < target) {
+    start += start + rate;
+    years++;
+  }
+  return years;
   // TODO
 }
 
@@ -154,6 +214,17 @@ export function getCompoundTime(start, rate, target) {
  * moveWater(7, 3); // 1
  */
 export function moveWater(colander, bucket) {
+  let trips = 0;
+  let current = colander;
+  while (bucket > 0) {
+    bucket -= current;
+    trips++;
+
+    if (current > 1) {
+      current--;
+    }
+  }
+  return trips;
   // TODO
 }
 
@@ -174,5 +245,13 @@ export function moveWater(colander, bucket) {
  * fizzbuzz(15); // logs 1, 2, fizz, 4, buzz, fizz, 7, 8, fizz, buzz, 11, fizz, 13, 14, fizzbuzz
  */
 export function fizzbuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    let output = "";
+
+    if (i % 3 === 0) output += "fizz";
+    if (i % 5 === 0) output += "buzz";
+
+    console.log(output || i);
+  }
   // TODO
 }

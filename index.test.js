@@ -12,7 +12,7 @@ import {
   fizzbuzz,
 } from "./index.js";
 
-describe("echo", function () {
+describe.only("echo", function () {
   it("returns repeated word for n > 1", function () {
     expect(echo("bird", 3)).toBe("birdbirdbird");
   });
@@ -30,7 +30,7 @@ describe("echo", function () {
   });
 });
 
-describe("echoWithSpace", function () {
+describe.only("echoWithSpace", function () {
   it("returns repeated word with spaces for n > 1", function () {
     expect(echoWithSpace("badger", 3)).toBe("badger badger badger");
   });
@@ -48,7 +48,7 @@ describe("echoWithSpace", function () {
   });
 });
 
-describe("sumTo", function () {
+describe.only("sumTo", function () {
   it("returns sum for n > 1", function () {
     expect(sumTo(5)).toBe(15);
   });
@@ -63,7 +63,7 @@ describe("sumTo", function () {
   });
 });
 
-describe("sumFromTo", function () {
+describe.only("sumFromTo", function () {
   it("returns sum for a < z", function () {
     expect(sumFromTo(1, 3)).toBe(6);
   });
@@ -78,7 +78,7 @@ describe("sumFromTo", function () {
   });
 });
 
-describe("countdown", function () {
+describe.only("countdown", function () {
   // We're using some new techniques here to make sure that you're using
   // console.log correctly.
   // Don't worry about understanding this yet!
@@ -111,7 +111,7 @@ describe("countdown", function () {
   });
 });
 
-describe("sumOddsToN", function () {
+describe.only("sumOddsToN", function () {
   it("returns sum of odds for n > 1", function () {
     expect(sumOddsToN(5)).toBe(9);
   });
@@ -129,7 +129,7 @@ describe("sumOddsToN", function () {
   });
 });
 
-describe("getGrowthTime", function () {
+describe.only("getGrowthTime", function () {
   it("returns undefined if start <= 0", function () {
     expect(getGrowthTime(0, 10)).toBeUndefined();
     expect(getGrowthTime(-5, 10)).toBeUndefined();
@@ -148,7 +148,7 @@ describe("getGrowthTime", function () {
   });
 });
 
-describe("getCompoundTime", function () {
+describe.only("getCompoundTime", function () {
   it("returns undefined if start <= 0", function () {
     expect(getCompoundTime(0, 0.1, 100)).toBeUndefined();
     expect(getCompoundTime(-100, 0.1, 100)).toBeUndefined();
@@ -171,7 +171,7 @@ describe("getCompoundTime", function () {
   });
 });
 
-describe("moveWater", function () {
+describe.only("moveWater", function () {
   it("returns undefined if colander <= 0", () => {
     expect(moveWater(0, 10)).toBeUndefined();
     expect(moveWater(-3, 10)).toBeUndefined();
@@ -194,7 +194,7 @@ describe("moveWater", function () {
   });
 });
 
-describe("fizzbuzz", function () {
+describe.only("fizzbuzz", function () {
   let spy;
   beforeAll(function () {
     spy = vi.spyOn(console, "log");
